@@ -14,6 +14,6 @@ pip install -r requirements.txt
 
 ## Создайте файл .env с параметрами API и токенами:
 
-API_ID=...
-API_HASH=...
-SESSION_NAME=...
+API_ID=
+API_HASH=
+PHONE_NUMBER=+
