@@ -5,8 +5,8 @@ from telethon.errors import ChatWriteForbiddenError
 
 env_values = dotenv_values(".env")
 
-api_id = int(env_values.get("C_API_ID"))
-api_hash = env_values.get("C_API_HASH")
+api_id = int(env_values.get("API_ID"))
+api_hash = env_values.get("API_HASH")
 print(api_id)
 
 
@@ -26,7 +26,11 @@ async def send_latest_posts():
     ) as client:
         while True:
             # Пересылаем обычные сообщения
-            individual_messages = ["Привет! Это тестовое сообщение 1.", "Как дела? Это тестовое сообщение 2.", "Это третье тестовое сообщение."]
+            individual_messages = [
+                "Привет! Это тестовое сообщение 1.",
+                "Как дела? Это тестовое сообщение 2.",
+                "Это третье тестовое сообщение.",
+            ]
 
             async def msg_task():
                 for msg in individual_messages:

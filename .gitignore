@@ -1,0 +1,30 @@
+# Виртуальное окружение
+venv/
+
+
+# Кэш Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Конфиденциальные данные
+*.env
+
+# Файлы/папки IDE
+.vscode/
+.idea/
+
+# Логи
+*.log
+
+# Компиляция
+build/
+dist/
+*.egg-info/
+
+# pyinstaller
+*.spec
+
+# Jupyter (на всякий случай)
+.ipynb_checkpoints/

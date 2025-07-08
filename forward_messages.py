@@ -33,7 +33,7 @@ async def send_latest_posts():
             saved_messages = await client.get_messages("me", limit=100)
 
             if not saved_messages:
-                print("⚠ Нет новых сообщений в сохраненных.")
+                print(" Нет новых сообщений в сохраненных.")
                 await asyncio.sleep(30)  # Ждём 30 сек перед следующей проверкой
                 continue
 
@@ -52,20 +52,20 @@ async def send_latest_posts():
 
                 # Пересылаем альбомы
             print(
-                f"⚡ Группировка завершена. Всего альбомов: {len(albums)}, сообщений без медиа: {len(individual_messages)}"
+                f" Группировка завершена. Всего альбомов: {len(albums)}, сообщений без медиа: {len(individual_messages)}"
             )
 
             async def album_task():
                 if not albums:  # Если альбомы пусты
                     print("⚠ Нет альбомов для пересылки.")
                 for album in albums.values():
-                    print(f"⚡ Отправка альбома с {len(album)} сообщениями.")
+                    print(f" Отправка альбома с {len(album)} сообщениями.")
                     await forward_album(client, channels_with_photos, album)
                     await asyncio.sleep(4400)
 
             async def msg_task():
                 for msg in individual_messages:
-                    print(f"⚡ Отправка сообщения: {msg.id}")
+                    print(f" Отправка сообщения: {msg.id}")
                     await forward_to_channels(client, channels_without_photos, msg)
                     await asyncio.sleep(4400)
 
